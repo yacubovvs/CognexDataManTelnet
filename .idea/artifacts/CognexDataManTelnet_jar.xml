@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="CognexDataManTelnet:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/CognexDataManTelnet_jar</output-path>
+    <root id="archive" name="CognexDataManTelnet.jar">
+      <element id="module-output" name="CognexDataManTelnet" />
+    </root>
+  </artifact>
+</component>

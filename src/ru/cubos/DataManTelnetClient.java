@@ -6,9 +6,13 @@ import java.io.InputStreamReader;
 import java.net.Socket;
 
 public class DataManTelnetClient {
-    public DataManTelnetClient(DataManCallback dataManCallback, String host){
+    Thread thread;
+    int scannerNum;
 
-        Thread thread = new Thread(new Runnable() {
+    public DataManTelnetClient(DataManCallback dataManCallback, String host, int scannerNum){
+
+        this.scannerNum = scannerNum;
+        thread = new Thread(new Runnable() {
 
             @Override
             public void run() {
@@ -16,18 +20,18 @@ public class DataManTelnetClient {
                 Socket socket = null;
                 BufferedReader in = null;
 
-                try {
+                try{
                     socket = new Socket(host, 23);
                     in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                } catch (IOException e) {
+                }catch (IOException e){
                     return;
                 }
 
                 try {
                     while (true){
-                        String outString = in.readLine();
-                        if(outString!=null){
-                            dataManCallback.onCodeScanned(outString);
+                        String outString = in.readLine().trim();
+                        if(outString!=null && outString.length()!=0){
+                            dataManCallback.onCodeScanned(scannerNum, outString);
                         }
                         Thread.sleep(1);
                     }
@@ -43,8 +47,9 @@ public class DataManTelnetClient {
                 }
             }
         });
+    }
 
+    public void start(){
         thread.start();
-
     }
 }

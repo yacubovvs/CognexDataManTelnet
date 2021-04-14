@@ -1,5 +1,5 @@
 package ru.cubos;
 
 public interface DataManCallback {
-    public void onCodeScanned(String codeString);
+    public void onCodeScanned(int scannerNum, String codeString);
 }

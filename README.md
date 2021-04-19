@@ -1,5 +1,5 @@
 # CognexDataManTelnet
-Cognex Dataman example for Java connecting via telnet
+Cognex Dataman example for Java connecting via telnet for continuous reading
 
 In DataMan Utility:
 1. Change Trigger Type to Presentation (internal) or `||>SET TRIGGER.TYPE 1\r\n` command on telnet
@@ -7,6 +7,7 @@ In DataMan Utility:
 3. Set static ip to the Camera
 4. Format data switch to the `Script-Based Formatting`
 5. Added script in `Sripting`->`Data Formatting`
+
 ```
 function onResult (decodeResults, readerProperties, output)
 {

@@ -4,8 +4,8 @@ Cognex Dataman example for Java connecting via telnet for continuous reading
 In DataMan Utility:
 1. Change Trigger Type to Presentation (internal) or `||>SET TRIGGER.TYPE 1\r\n` command on telnet
 2. Setting not to read barcode twice
-3. Set static ip to the Camera (and ip in Main.java)
-4. Format data switch to the `Script-Based Formatting`
+3. Set static ip to the Camera (and IP in Main.java)
+4. Format data switch to the `Script->Based Formatting`
 5. Added script in `Sripting`->`Data Formatting`
 
 ```
